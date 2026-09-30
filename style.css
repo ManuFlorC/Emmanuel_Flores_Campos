@@ -269,3 +269,36 @@ body {
 .timeline-point:hover {
     transform: translateY(-8px);
 }
+/* ========================= */
+/* NAVIGATION BAR */
+/* ========================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(15,23,42,0.95);
+    backdrop-filter: blur(10px);
+}
+.nav-logo {
+    font-weight: bold;
+    color: white;
+    font-size: 1.1rem;
+}
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+.nav-links a {
+    color: #CBD5E1;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.nav-links a:hover {
+    color: #3B82F6;
+}
