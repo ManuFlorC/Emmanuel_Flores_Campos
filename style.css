@@ -367,52 +367,73 @@ body {
      border: 1px solid rgba(255,255,255,0.08);
      border-radius: 12px;
  }
-/* ========================= */
-/* CONTACT */
-/* ========================= */
- #contact {
-     max-width: 1600px;
-     margin: auto;
-     padding: 120px 40px;
- }
- 
+/* ==========================================
+   📌 SECCIÓN DE CONTACTO (EFC PORTFOLIO)
+   ========================================== */
+
+/* Contenedor general de la sección de contacto */
+#contact {
+    /* Reducimos de 1600px a 1200px para que el contenido no se desparrame tanto en monitores gigantes */
+    max-width: 1200px;
+    margin: 80px auto; /* Centra la sección y le da un respiro arriba y abajo */
+    padding: 0 40px;
+}
+
+/* El título imponente de la sección */
 #contact h2 {
-     text-align: center;
-     font-size: 3rem;
-     margin-bottom: 80px;
-     color: #3B82F6;
- 
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 60px; /* Reducido un poco para que no quede tan lejos de las opciones */
+    color: #F5F2EA; /* Cambiado a tu color marfil para mantener la elegancia premium */
+    letter-spacing: 2px;
 }
-/*.contact-buttons {
-     margin-top: 40px;
-     display: flex;
-     justify-content: center;
-     gap: 20px;
- }*/
-.contact-grid { 
-     display: grid; 
-     grid-template-columns: repeat(5, 1fr);
-     gap: 40px;
-     align-items: start;
- }
+
+/* LA REJILLA MÁGICA: Distribuye los 5 elementos de forma inteligente */
+.contact-grid {
+    display: grid;
+    /* CORRECCIÓN CRUCIAL: 'auto-fit' calcula cuántas columnas caben en pantalla. 
+       Si no hay espacio suficiente (como en un celular), las baja automáticamente sin romperse */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px; /* Separación simétrica y limpia entre cada bloque */
+    align-items: start;
+}
+
+/* Cada una de tus 5 tarjetas o bloques de contacto individuales */
 .contact-item {
-     text-align: center; 
+    text-align: center;
+    /* Tu toque minimalista: una línea sutil arriba del texto */
+    border-top: 2px solid rgba(255, 255, 255, 0.08); 
+    padding-top: 25px;
+    transition: all 0.3s ease; /* Suaviza cualquier animación o cambio de color */
 }
+
+/* Animación sutil cuando el usuario pasa el mouse por encima de la celda */
+.contact-item:hover {
+    border-top-color: #F59E0B; /* La línea gris aburrida se enciende en tu color ámbar */
+    transform: translateY(-3px); /* La caja se eleva sutilmente dándole interactividad pro */
+}
+
+/* Títulos pequeños de cada bloque (Email, LinkedIn, Location...) */
 .contact-item h3 {
-     color: #F59E0B;
-     margin-bottom: 15px;
-     min-height: 30px;
+    color: #F59E0B; /* Tu color ámbar de acento */
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+    text-transform: uppercase; /* Fuerza las mayúsculas para un look más estructurado */
+    letter-spacing: 1px;
 }
+
+/* Estilo para los enlaces, correos y textos clicables */
 .contact-item a {
-     color: #CBD5E1;
-     text-decoration: none;
-     transition: 0.3s;
-     word-break: break-word;
+    color: #CBD5E1; /* Gris claro que no cansa la vista */
+    text-decoration: none; /* Le quita la línea subrayada fea del internet viejo */
+    font-size: 0.95rem;
+    font-weight: 300;
+    word-break: break-word; /* OBLIGATORIO: Si tu correo no cabe, lo divide limpiamente en dos renglones en vez de romper la caja */
+    transition: color 0.3s ease;
 }
+
+/* Efecto hover en los enlaces */
 .contact-item a:hover {
-     color: #3B82F6;
+    color: #F5F2EA; /* Cambia a tu color marfil brillante en vez de ese azul que desentonaba */
 }
-.contact-item {
-    border-top: 2px solid rgba(255,255,255,0.08);
-    padding-top: 20px;
- }
