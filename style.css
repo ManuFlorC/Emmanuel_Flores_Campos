@@ -351,22 +351,25 @@ body {
     border-bottom: 1px solid rgba(255,255,255,0.08); 
 }
 #vision {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: auto;
     padding: 120px 40px;
-    text-align: center; 
 }
-.vision-path {
-     display: flex;
-     justify-content: center;
-     gap: 50px;
-     margin-top: 60px;
- }
-.vision-path div {
-     padding: 20px 30px;
-     border: 1px solid rgba(255,255,255,0.08);
-     border-radius: 12px;
- }
+ #vision h2 {
+     text-align: center;
+     font-size: 3rem;
+     margin-bottom: 60px;
+     color: #3B82F6; 
+}
+ .vision-statement { 
+line-height: 2; 
+font-size: 1.15rem; 
+color: #E2E8F0; 
+}
+ 
+.vision-statement p { 
+margin-bottom: 30px; 
+}
 /* ==========================================
    📌 SECCIÓN DE CONTACTO (EFC PORTFOLIO)
    ========================================== */
