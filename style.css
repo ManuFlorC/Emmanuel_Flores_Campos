@@ -186,3 +186,79 @@ body {
     color: #94A3B8; /* Se corrigió el color hexadecimal que estaba roto */
     font-size: 0.9rem;
 }
+#timeline-details {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 40px;
+    /* Agregado: Si pones varias tarjetas dentro de esta sección, 
+       esto les dará una separación vertical elegante y automática */
+    display: flex;
+    flex-direction: column;
+    gap: 40px; 
+}
+
+.details-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 40px;
+    text-align: left;
+    /* Agregado: Un sutil efecto de desenfoque de fondo (glassmorphism) 
+       y una transición para cuando el usuario pase el cursor */
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Agregado: Efecto Hover para que se sienta interactivo */
+.details-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(245, 158, 11, 0.3); /* Destello sutil con tu color ámbar */
+}
+
+.stage {
+    display: inline-block;
+    color: #F59E0B;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    /* Agregado: Forzar mayúsculas automáticamente por si acaso, 
+       y reducir un poco el tamaño de fuente para que luzca como etiqueta */
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.details-card h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: 600; /* Asegura buena presencia */
+}
+
+.details-card h4 {
+    color: #94A3B8;
+    margin-bottom: 25px;
+    font-weight: 400; /* Estilo más ligero para la fecha y lugar */
+    font-size: 1.1rem;
+}
+
+.details-card p {
+    line-height: 1.8;
+    margin-bottom: 25px;
+    color: #E2E8F0; /* Un gris casi blanco para que no canse la vista */
+}
+
+.details-card ul {
+    padding-left: 20px;
+    line-height: 2;
+    color: #E2E8F0;
+    margin-bottom: 25px; /* Agregado: Margen abajo para que no se pegue al blockquote */
+}
+
+.details-card blockquote {
+    margin-top: 30px;
+    padding-left: 20px;
+    border-left: 4px solid #F59E0B;
+    font-style: italic;
+    color: #CBD5E1;
+    font-size: 1.1rem; /* Un toque un poco más grande para la frase */
+}
+
