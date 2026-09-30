@@ -290,32 +290,60 @@
             </div>
         </div> <!-- Fin del contenedor de ruta -->
     </section> <!-- Fin de la sección Vision -->
-    <!-- SECCIÓN PRINCIPAL: Mapeada con el id="contact" para que el botón de la barra superior baje directo aquí -->
+
+    <!-- SECCIÓN PRINCIPAL: Mapeada con id="contact" para la navegación superior -->
     <section id="contact">
-        <!-- Título de la sección de cierre y conexión profesional -->
-        <h2>Contact</h2>
-        <!-- Información clave de contacto: Correo electrónico con enlace directo -->
-        <p class="contact-info">
-            <strong>Email:</strong> 
-            <a href="mailto:e.flor.c@outlook.com">e.flor.c@outlook.com</a>
-        </p>
-        <!-- Tu ubicación geográfica actual -->
-        <p class="contact-info">
-            <strong>Location:</strong> Gijón, Asturias, Spain
-        </p>
-        <!-- CONTENEDOR DE BOTONES: Aquí están tus dos archivos listos para descargarse -->
-        <div class="contact-buttons">
-            <!-- Botón 1: Descarga tu CV Tradicional (Nombre del archivo: cv-emmanuel-flores.pdf) -->
-            <a href="cv-emmanuel-flores.pdf" class="btn btn-primary" download="CV_Emmanuel_Flores_Campos.pdf">
-                Download CV
-            </a>
-            <!-- Botón 2: Descarga tu Portafolio Técnico Completo (Nombre del archivo: technical-portfolio.pdf) -->
-            <a href="technical-portfolio.pdf" class="btn btn-secondary" download="Technical_Portfolio_Emmanuel_Flores.pdf">
-                Technical Portfolio
-            </a>
-        </div>
-    </section> <!-- Fin de la sección Contacto -->
     
+        <!-- Título principal de la sección de contacto -->
+        <h2>Contact</h2>
+    
+        <!-- CONTENEDOR EN REJILLA (GRID): Esta caja se encargará de alinear los 5 bloques de lado a lado -->
+        <div class="contact-grid">
+    
+            <!-- BLOQUE 1: Correo electrónico profesional con enlace directo -->
+            <div class="contact-item">
+                <h3>Email</h3>
+                <a href="mailto:e.flor.c@outlook.com">
+                    e.flor.c@outlook.com
+                </a>
+            </div>
+    
+            <!-- BLOQUE 2: Tu perfil profesional de LinkedIn de Emmanuel Flores Campos -->
+            <div class="contact-item">
+                <h3>LinkedIn</h3>
+                <a href="https://www.linkedin.com/in/emmanuel-flores-campos-3188103a9/" target="_blank">
+                    LinkedIn Profile
+                </a>
+            </div>
+    
+            <!-- BLOQUE 3: Tu ubicación geográfica actual en Asturias con enlace directo a Google Maps -->
+            <div class="contact-item">
+                <h3>Location</h3>
+                <a href="https://maps.app.goo.gl/MHTZigeGdvWBjNz48" target="_blank">
+                    Gijón, Spain
+                </a>
+            </div>
+    
+            <!-- BLOQUE 4: Descarga de tu CV tradicional (cv-emmanuel-flores.pdf) -->
+            <div class="contact-item">
+                <h3>Resume</h3>
+                <a href="cv-emmanuel-flores.pdf" download="CV_Emmanuel_Flores_Campos.pdf">
+                    Download CV
+                </a>
+            </div>
+    
+            <!-- BLOQUE 5: Descarga de tu Portafolio Técnico extendido (technical-portfolio.pdf) -->
+            <div class="contact-item">
+                <h3>Portfolio</h3>
+                <a href="technical-portfolio.pdf" download="Technical_Portfolio_Emmanuel_Flores.pdf">
+                    Download Portfolio
+                </a>
+            </div>
+    
+        </div> <!-- Fin del contenedor contact-grid -->
+    
+    </section> <!-- Fin de la sección Contact -->
+ 
     <!-- Enlace listo para cuando uses tu archivo de JS -->
     <script src="script.js"></script>
 </body>
