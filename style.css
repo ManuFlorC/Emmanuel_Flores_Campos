@@ -261,4 +261,11 @@ body {
     color: #CBD5E1;
     font-size: 1.1rem; /* Un toque un poco más grande para la frase */
 }
-
+/*Esto es pa la sección de clicables ALV*/
+.timeline-point {
+    cursor: pointer;
+    transition: 0.3s;
+} 
+.timeline-point:hover {
+    transform: translateY(-8px);
+}
