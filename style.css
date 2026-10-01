@@ -457,3 +457,71 @@ body {
     }
 }
 
+/* ==========================================
+   📌 DISEÑO RESPONSIVO (MÓVILES Y TABLETS)
+   ========================================== */
+
+@media (max-width: 768px) {
+
+    /* NAVBAR: Más compacta en celulares para dejar espacio al contenido */
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        font-size: 0.9rem;
+    }
+
+    /* HERO: Letras más chicas para que tus títulos no se desborden de la pantalla */
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .tagline {
+        font-size: 1.1rem;
+    }
+
+    /* OVERVIEW: Ajustado para mantener el "aire y respiro" elegante que querías */
+    #overview {
+        padding: 80px 25px; /* CORRECCIÓN: Se quitó el margen de 220px abajo para que no quede un hueco vacío enorme en el celular */
+    }
+
+    #overview h3 {
+        font-size: 2rem;
+    }
+    
+    /* VISION: Agregado para que la sección de Visión también se encoga bonito en celulares */
+    #vision {
+        padding: 80px 25px;
+    }
+    
+    #vision h2 {
+        font-size: 2rem;
+    }
+
+    /* TIMELINE: Permite hacer scroll horizontal con el dedo si los puntos no caben de lado a lado */
+    .timeline-container {
+        overflow-x: auto;
+        padding-bottom: 30px;
+    }
+
+    /* SKILLS: Apila las 4 columnas de habilidades hacia abajo en una sola fila vertical, 
+       así se leen a la perfección en cualquier pantalla táctil */
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    /* CORRECCIÓN CRUCIAL DEL FOOTER: 
+       Borramos tu regla anterior porque nuestro footer ya está congelado abajo y calcula 
+       sus tamaños automáticamente en móviles con la regla @media que pusimos arriba. 
+       Dejar esto aquí iba a chocar con los estilos indestructibles de tus descargas. */
+
+}
+
+
