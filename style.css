@@ -277,6 +277,10 @@ body {
 .nav-links a:hover {
     color: #3B82F6;
 }
+.nav-logo a:visited { 
+color: #F59E0B; 
+text-decoration: none;
+ }
 
 /* ==========================================
    📌 OVERVIEW SECTION (CON EL MISMO AIRE Y RESPIRO)
