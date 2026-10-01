@@ -113,44 +113,63 @@
         </div>
     </section>
     
-    <section id="journey-map">
-        <h2>Engineering Journey</h2>
-        <div class="world-map">
-            <img
-                src="img/world-map.png"
-                alt="World Map"
-                class="map-image">
+    <!-- SECCIÓN PRINCIPAL: Mapeada con id="journey-map" para la navegación -->
+<section id="journey-map">
+    <h2>Engineering Journey</h2>
     
-            <!-- NODOS -->
-    
-            <div class="map-node cdmx">
-                <span class="dot"></span>
-                < paraiso">
-                <span class="dot"></span>
-                <span class="label">Paraíso</span>
-            </div>
-    
-            <div class="map-node elsauz">
-                <span class="dot"></span>
-                <span class="label">El Sauz</span>
-            </div>
-    
-            <div class="map-node madrid">
-                <span class="dot"></span>
-                <span class="label">Madrid</span>
-            </div>
-    
-            <div class="map-node gijon">
-                <span class="dot"></span>
-                <span class="label">Gijón</span>
-            </div>
-    
-            <div class="map-node mugardos">
-                <span class="dot"></span>
-                <span class="label">Mugardos</span>
-            </div>
-            </div>
-    </section>
+    <!-- CONTENEDOR MADRE: Caja relativa que retiene y alinea todos los pines -->
+    <div class="world-map">
+        
+        <!-- 
+          🖼️ IMAGEN DEL MAPA: 
+          Si tu imagen está suelta en la carpeta raíz junto al index.html, cámbiale el src a solo "world-map.png".
+          Si tienes una carpeta llamada img, déjalo como "img/world-map.png". Revisa las mayúsculas/minúsculas.
+        -->
+        <img src="img/world-map.png" alt="World Map" class="map-image">
+
+        <!-- ==========================================
+             📌 MARCADORES GEOGRÁFICOS (PUNTOS)
+             ========================================== -->
+
+        <!-- Nodo 1: Ciudad de México -->
+        <div class="map-node cdmx">
+            <span class="dot"></span>
+            <span class="label">CDMX</span>
+        </div>
+
+        <!-- Nodo 2: Paraíso, Tabasco (CORREGIDO: Ya es un bloque independiente) -->
+        <div class="map-node paraiso">
+            <span class="dot"></span>
+            <span class="label">Tabasco</span>
+        </div>
+
+        <!-- Nodo 3: El Sauz -->
+        <div class="map-node elsauz">
+            <span class="dot"></span>
+            <span class="label">Querétaro</span>
+        </div>
+
+        <!-- Nodo 4: Madrid -->
+        <div class="map-node madrid">
+            <span class="dot"></span>
+            <span class="label">Madrid</span>
+        </div>
+
+        <!-- Nodo 5: Gijón (Tu base actual en TSK) -->
+        <div class="map-node gijon">
+            <span class="dot"></span>
+            <span class="label">Gijón</span>
+        </div>
+
+        <!-- Nodo 6: Mugardos -->
+        <div class="map-node mugardos">
+            <span class="dot"></span>
+            <span class="label">Galicia</span>
+        </div>
+
+    </div> <!-- Cierre correcto del contenedor .world-map -->
+</section> <!-- Cierre correcto de la sección #journey-map -->
+
 
     <!-- SECCIÓN PRINCIPAL: Mapeada con el id="skills" para que el botón del menú navegue directo aquí -->
     <section id="skills">
