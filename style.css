@@ -551,7 +551,96 @@ body {
        Borramos tu regla anterior porque nuestro footer ya está congelado abajo y calcula 
        sus tamaños automáticamente en móviles con la regla @media que pusimos arriba. 
        Dejar esto aquí iba a chocar con los estilos indestructibles de tus descargas. */
+    .world-map {
+        height: 500px;
+    }
+    .label {
+        font-size: 0.75rem;
+    }
+}
+/* ==========================================
+   ENGINEERING JOURNEY MAP
+   ========================================== */
 
+#journey-map {
+    max-width: 1600px;
+    margin: auto;
+    padding: 120px 40px;
+}
+#journey-map h2 {
+    text-align: center;
+    font-size: 3rem;
+    color: #3B82F6;
+    margin-bottom: 80px;
+}
+.world-map {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.08);
+    overflow: hidden;
+}
+.continent {
+    position: absolute;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+}
+.north-america {
+    width: 350px;
+    height: 220px;
+    left: 120px;
+    top: 180px;
+}
+.europe {
+    width: 220px;
+    height: 140px;
+    right: 260px;
+    top: 180px;
+}
+.map-node {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #64748B;
+}
+.label {
+    font-size: 0.95rem;
+    color: #CBD5E1;
+}
+.cdmx {
+    left: 220px;
+    top: 260px;
 }
 
+.paraiso {
+    left: 280px;
+    top: 340px;
+}
 
+.elsauz {
+    left: 290px;
+    top: 250px;
+}
+
+.madrid {
+    right: 320px;
+    top: 240px;
+}
+
+.gijon {
+    right: 270px;
+    top: 190px;
+}
+
+.mugardos {
+    right: 220px;
+    top: 150px;
+}
