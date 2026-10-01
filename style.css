@@ -371,28 +371,39 @@ color: #E2E8F0; 
 margin-bottom: 30px; 
 }
 /* ==========================================
-   📌 ESTILOS DEL FOOTER BAR (EFC)
+   📌 ESTILOS DEL FOOTER FIJO Y FLOTANTE (EFC)
    ========================================== */
 
 .footer-bar {
+    /* TRUCO CLAVE: Lo ancla permanentemente abajo y ocupando todo el ancho */
+    position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    max-width: 1200px;
-    margin: 120px auto 40px auto; /* Gran espacio arriba para separarlo del contenido, respiro abajo */
-    padding: 30px 40px;
     
-    /* El truco del Grid para alinear los 5 elementos horizontalmente */
+    /* Diseño compacto y limpio */
+    padding: 15px 40px; /* Reducimos el padding para que no robe tanto espacio de pantalla */
+    
+    /* Alineación de las 5 columnas en una fila */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas idénticas y fijas */
+    gap: 15px;
     
-    /* Tu estética oscura: una línea superior muy fina y fondo sutil */
+    /* EFECTO PREMIUM: Fondo muy oscuro con transparencia y desenfoque (Glassmorphism) 
+       Esto hace que tu contenido pase por detrás elegantemente al hacer scroll */
+    background: rgba(15, 15, 15, 0.85); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* Compatibilidad con Safari/iOS */
+    
+    /* Línea sutil arriba para separarlo del contenido de fondo */
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(255, 255, 255, 0.01);
-    border-radius: 8px;
     text-align: center;
+    
+    /* Z-INDEX ALTO: Obliga al footer a flotar SIEMPRE por encima de cualquier texto o tarjeta */
+    z-index: 999; 
 }
 
-/* Contenedor de cada enlace */
+/* Contenedor de cada enlace dentro del footer */
 .footer-item {
     display: flex;
     justify-content: center;
@@ -402,28 +413,38 @@ margin-bottom: 30px; 
 /* Estilo de los textos e íconos clicables */
 .footer-item a {
     color: #CBD5E1; /* Tu gris claro legible */
-    text-decoration: none; /* Adiós al subrayado azul feo */
-    font-size: 0.95rem;
+    text-decoration: none; /* Adiós al subrayado azul */
+    font-size: 0.9rem;
     font-weight: 400;
     letter-spacing: 0.5px;
-    transition: all 0.3s ease; /* Suaviza el cambio de color y tamaño */
-    padding: 8px 16px;
+    transition: all 0.3s ease;
+    padding: 6px 12px;
     border-radius: 6px;
 }
 
-/* Efecto Hover: Cuando pasen el mouse, se encenderá en ámbar con un fondo sutil */
+/* Efecto Hover: Brillo en tu color ámbar insignia al pasar el mouse */
 .footer-item a:hover {
-    color: #F59E0B; /* Tu color ámbar insignia */
-    background: rgba(255, 255, 255, 0.03); /* Un cajón muy tenue de fondo */
-    transform: translateY(-2px); /* Pequeño salto interactivo hacia arriba */
+    color: #F59E0B; /* Tu color ámbar */
+    background: rgba(255, 255, 255, 0.03); /* Sutil cajón de fondo */
+    transform: translateY(-2px); /* Pequeño salto interactivo */
 }
 
-/* Control responsivo: En pantallas muy pequeñas de celular se acomoda en lista limpia */
+/* ⚠️ IMPORTANTE: Añade esta regla para que el contenido de tus secciones 
+   no se quede oculto detrás del footer cuando hagas scroll hasta el final */
+body {
+    padding-bottom: 80px; /* Deja un colchón de espacio libre abajo idéntico al alto del footer */
+}
+
+/* Control Responsivo: En teléfonos celulares mantenemos las 5 columnas 
+   pero compactamos un poco más la letra para que quepa de lado a lado perfectamente */
 @media (max-width: 600px) {
     .footer-bar {
-        grid-template-columns: 1fr; /* Una sola columna vertical */
-        gap: 15px;
-        margin: 80px auto 20px auto;
-        padding: 20px;
+        padding: 12px 10px;
+        gap: 5px;
+    }
+    .footer-item a {
+        font-size: 0.75rem; /* Letra más chica en móvil para que no se amontone */
+        padding: 4px 6px;
     }
 }
+
