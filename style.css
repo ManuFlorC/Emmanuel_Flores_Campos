@@ -344,9 +344,9 @@ text-decoration: none;
 .elsauz {
     left: 250px;
     top: 250px;
-}
-/*sección de skills ALV*/
-#skills {
+}/*Fin sección mapa ALV*/
+
+#skills {/*sección de skills ALV*/
     max-width: 1600px;
     margin: auto;
     padding: 120px 40px;
