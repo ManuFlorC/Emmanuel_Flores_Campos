@@ -591,16 +591,16 @@ body {
 .map-image {
     width: 100%;
     display: block;
-    opacity: 0.22; /* Filtro esmerilado opaco */
+    opacity: 1; /* Filtro esmerilado opaco */
 
     /* 🎨 Filtro que re-colorea la imagen original verde hacia el azul */
     filter:
         invert(42%)
         sepia(93%)
-        saturate(1352%)
+        saturate(1000%)
         hue-rotate(203deg)
-        brightness(98%)
-        contrast(95%);
+        brightness(120%)
+        contrast(135%);
 }
 
 /* Contenedor base de cada pin flotante */
