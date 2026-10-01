@@ -355,21 +355,34 @@ body {
     margin: auto;
     padding: 120px 40px;
 }
- #vision h2 {
-     text-align: center;
-     font-size: 3rem;
-     margin-bottom: 60px;
-     color: #3B82F6; 
+
+/* ==========================================
+   📌 PROFESSIONAL VISION (CON MÁS AIRE Y RESPIRO)
+   ========================================== */
+
+#vision {
+    max-width: 1100px;
+    margin: auto;
+    padding: 140px 40px; /* Excelente espacio arriba y abajo */
 }
- .vision-statement { 
-line-height: 2; 
-font-size: 1.15rem; 
-color: #E2E8F0; 
+
+#vision h2 {
+    font-size: 3rem;
+    color: #3B82F6; /* Tu azul característico de la sección */
+    margin-bottom: 60px;
 }
- 
-.vision-statement p { 
-margin-bottom: 30px; 
+
+/* Ajustado a '.vision-description' para que conecte con tu HTML actual */
+.vision-description {
+    font-size: 1.15rem;
+    line-height: 2; /* Esto es lo que le da ese aire limpio tan chido */
+    color: #E2E8F0;
 }
+
+.vision-description p {
+    margin-bottom: 35px; /* Separa los párrafos de forma muy elegante */
+}
+
 /* ==========================================
    📌 ESTILOS DEL FOOTER FIJO Y FLOTANTE (EFC)
    ========================================== */
