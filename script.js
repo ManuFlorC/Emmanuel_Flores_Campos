@@ -30,7 +30,7 @@ const content = {
 
         <h3>ICA Fluor Daniel</h3>
 
-        <h4>2019 - 2023 | Paraiso, Tabasco, Mexico</h4>
+        <h4>2019 - 2023 | Mexico City || Tabasco, Mexico</h4>
 
         <p>
             Participation in one of the largest industrial projects in Mexico,
@@ -39,11 +39,11 @@ const content = {
         </p>
 
         <ul>
-            <li>30,000+ Instrument Tags</li>
+            <li>30,000+ Instrument Lists</li>
             <li>SmartPlant Instrumentation</li>
             <li>Materials Management</li>
             <li>Construction Support</li>
-            <li>Startup Activities</li>
+            <li>Control Systems SAT tests</li>
         </ul>
 
         <blockquote>
@@ -91,9 +91,9 @@ const content = {
         <ul>
             <li>Control Logic Development</li>
             <li>Cause & Effect</li>
-            <li>ESD Systems</li>
-            <li>DCS Engineering</li>
-            <li>Commissioning Support</li>
+            <li>ESD functional tests</li>
+            <li>DCS Displays design</li>
+            <li>Commissioning and Startup Support</li>
         </ul>
 
         <blockquote>
