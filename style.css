@@ -579,9 +579,7 @@ body {
     margin-bottom: 80px;
 }
 
-/* 🗺️ CAJA MADRE DEL MAPA: 
-   Propiedad obligatoria para que los pines absolutos (.gijon, .cdmx) 
-   utilicen esta rejilla como su sistema de coordenadas de origen. */
+/* 🗺️ CAJA MADRE DEL MAPA: Sistema de coordenadas de origen */
 .world-map {
     position: relative;
     width: 100%;
@@ -593,13 +591,9 @@ body {
 .map-image {
     width: 100%;
     display: block;
-    
-    /* Le da un tono grisáceo transparente muy pro, evitando que brille de más 
-       y permitiendo que tus marcadores interactivos se roben la atención */
-    opacity: 0.22;
+    opacity: 0.22; /* Filtro esmerilado opaco */
 
-    /* 🎨 EL TRUCO MAGNÍFICO: Filtro que re-colorea matemáticamente 
-       el verde original de la imagen hacia tu paleta de azules */
+    /* 🎨 Filtro que re-colorea la imagen original verde hacia el azul */
     filter:
         invert(42%)
         sepia(93%)
@@ -608,25 +602,64 @@ body {
         brightness(98%)
         contrast(95%);
 }
+
+/* Contenedor base de cada pin flotante */
 .map-node {
     position: absolute;
     display: flex;
     align-items: center;
     gap: 10px;
+    z-index: 5;
+    transition: transform 0.3s ease;
 }
 
+/* Efecto hover general: el punto y su texto crecen un poco cuando pasas el mouse */
+.map-node:hover {
+    transform: scale(1.15);
+    z-index: 10; /* Se asegura de flotar por encima de otros nodos cercanos */
+}
+
+/* 🔵 EL CÍRCULO BASE CON EFECTO NEÓN (Azul para tus proyectos históricos) */
 .dot {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-    background: #64748B;
+    background-color: #3B82F6; /* Tu azul brillante */
+    /* 🌟 EFECTO NEÓN CHIDO: Crea un destello de luz suave alrededor del punto */
+    box-shadow: 0 0 10px #3B82F6, 0 0 20px rgba(59, 130, 246, 0.5);
+    display: block;
+    position: relative;
 }
 
+/* 🟠 EFECTO NARANJA/ÁMBAR PARA TU ACTUALIDAD Y ESPECIALIZACIÓN (Gijón y Mugardos) */
+.gijon .dot,
+.mugardos .dot {
+    background-color: #F59E0B; /* Tu color ámbar insignia */
+    box-shadow: 0 0 12px #F59E0B, 0 0 25px rgba(245, 158, 11, 0.7);
+    /* Animación infinita de pulso neón para resaltar donde estás parado hoy en día */
+    animation: pulsoNeon 2s infinite ease-in-out;
+}
+
+/* Cambia sutilmente el color del texto para tus hitos ámbar */
+.gijon .label,
+.mugardos .label {
+    color: #F5F2EA; /* Tu blanco marfil premium */
+    font-weight: 500;
+}
+
+/* El texto o etiqueta con el nombre de la ciudad */
 .label {
     color: #CBD5E1;
     font-size: 0.9rem;
+    font-weight: 400;
+    /* Sombra de texto para asegurar que se lea perfecto sobre el fondo oscuro */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9); 
+    white-space: nowrap; /* Evita que el nombre se rompa feo en pantallas chicas */
 }
-/*Coordenadas iniciales*/
+
+/* ==========================================
+   📌 COORDENADAS RESPONSIVAS (%)
+   ========================================== */
 .cdmx {
     left: 19%;
     top: 36%;
@@ -645,7 +678,6 @@ body {
 .madrid {
     left: 56%;
     top: 32%;
-
 }
 
 .gijon {
@@ -657,3 +689,20 @@ body {
     left: 53%;
     top: 21%;
 }
+
+/* ==========================================
+   🌀 ANIMACIÓN: PULSO NEÓN
+   ========================================== */
+@keyframes pulsoNeon {
+    0% {
+        box-shadow: 0 0 10px #F59E0B, 0 0 15px rgba(245, 158, 11, 0.5);
+    }
+    50% {
+        /* En el punto medio de la animación, el destello brilla con el doble de intensidad */
+        box-shadow: 0 0 16px #F59E0B, 0 0 30px rgba(245, 158, 11, 0.9);
+    }
+    100% {
+        box-shadow: 0 0 10px #F59E0B, 0 0 15px rgba(245, 158, 11, 0.5);
+    }
+}
+
