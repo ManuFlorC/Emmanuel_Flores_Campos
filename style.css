@@ -660,35 +660,38 @@ body {
 /* ==========================================
    📌 COORDENADAS RESPONSIVAS (%)
    ========================================== */
-.cdmx {
-    left: 19%;
-    top: 36%;
-}
-
-.paraiso {
-    left: 23%;
-    top: 50%;
-}
-
-.elsauz {
-    left: 24%;
-    top: 33%;
-}
-
-.madrid {
-    left: 56%;
-    top: 32%;
-}
-
-.gijon {
-    left: 55%;
-    top: 25%;
-}
-
-.mugardos {
-    left: 53%;
-    top: 21%;
-}
+    /* MÉXICO */
+    .cdmx {
+        left: 20.5%;
+        top: 37%;
+    }
+    
+    .paraiso {
+        left: 24%;
+        top: 53%;
+    }
+    
+    .elsauz {
+        left: 23%;
+        top: 43%;
+    }
+    
+    /* ESPAÑA */
+    
+    .madrid {
+        left: 56%;
+        top: 40%;
+    }
+    
+    .gijon {
+        left: 54.5%;
+        top: 33.5%;
+    }
+    
+    .mugardos {
+        left: 53.7%;
+        top: 31%;
+    }
 
 /* ==========================================
    🌀 ANIMACIÓN: PULSO NEÓN
