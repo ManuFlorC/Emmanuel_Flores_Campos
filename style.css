@@ -371,72 +371,59 @@ color: #E2E8F0; 
 margin-bottom: 30px; 
 }
 /* ==========================================
-   📌 SECCIÓN DE CONTACTO (EFC PORTFOLIO)
+   📌 ESTILOS DEL FOOTER BAR (EFC)
    ========================================== */
 
-/* Contenedor general de la sección de contacto */
-#contact {
-    /* Reducimos de 1600px a 1200px para que el contenido no se desparrame tanto en monitores gigantes */
+.footer-bar {
+    width: 100%;
     max-width: 1200px;
-    margin: 80px auto; /* Centra la sección y le da un respiro arriba y abajo */
-    padding: 0 40px;
-}
-
-/* El título imponente de la sección */
-#contact h2 {
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 60px; /* Reducido un poco para que no quede tan lejos de las opciones */
-    color: #F5F2EA; /* Cambiado a tu color marfil para mantener la elegancia premium */
-    letter-spacing: 2px;
-}
-
-/* LA REJILLA MÁGICA: Distribuye los 5 elementos de forma inteligente */
-.contact-grid {
+    margin: 120px auto 40px auto; /* Gran espacio arriba para separarlo del contenido, respiro abajo */
+    padding: 30px 40px;
+    
+    /* El truco del Grid para alinear los 5 elementos horizontalmente */
     display: grid;
-    /* CORRECCIÓN CRUCIAL: 'auto-fit' calcula cuántas columnas caben en pantalla. 
-       Si no hay espacio suficiente (como en un celular), las baja automáticamente sin romperse */
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 30px; /* Separación simétrica y limpia entre cada bloque */
-    align-items: start;
-}
-
-/* Cada una de tus 5 tarjetas o bloques de contacto individuales */
-.contact-item {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    
+    /* Tu estética oscura: una línea superior muy fina y fondo sutil */
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.01);
+    border-radius: 8px;
     text-align: center;
-    /* Tu toque minimalista: una línea sutil arriba del texto */
-    border-top: 2px solid rgba(255, 255, 255, 0.08); 
-    padding-top: 25px;
-    transition: all 0.3s ease; /* Suaviza cualquier animación o cambio de color */
 }
 
-/* Animación sutil cuando el usuario pasa el mouse por encima de la celda */
-.contact-item:hover {
-    border-top-color: #F59E0B; /* La línea gris aburrida se enciende en tu color ámbar */
-    transform: translateY(-3px); /* La caja se eleva sutilmente dándole interactividad pro */
+/* Contenedor de cada enlace */
+.footer-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Títulos pequeños de cada bloque (Email, LinkedIn, Location...) */
-.contact-item h3 {
-    color: #F59E0B; /* Tu color ámbar de acento */
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin-bottom: 12px;
-    text-transform: uppercase; /* Fuerza las mayúsculas para un look más estructurado */
-    letter-spacing: 1px;
-}
-
-/* Estilo para los enlaces, correos y textos clicables */
-.contact-item a {
-    color: #CBD5E1; /* Gris claro que no cansa la vista */
-    text-decoration: none; /* Le quita la línea subrayada fea del internet viejo */
+/* Estilo de los textos e íconos clicables */
+.footer-item a {
+    color: #CBD5E1; /* Tu gris claro legible */
+    text-decoration: none; /* Adiós al subrayado azul feo */
     font-size: 0.95rem;
-    font-weight: 300;
-    word-break: break-word; /* OBLIGATORIO: Si tu correo no cabe, lo divide limpiamente en dos renglones en vez de romper la caja */
-    transition: color 0.3s ease;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease; /* Suaviza el cambio de color y tamaño */
+    padding: 8px 16px;
+    border-radius: 6px;
 }
 
-/* Efecto hover en los enlaces */
-.contact-item a:hover {
-    color: #F5F2EA; /* Cambia a tu color marfil brillante en vez de ese azul que desentonaba */
+/* Efecto Hover: Cuando pasen el mouse, se encenderá en ámbar con un fondo sutil */
+.footer-item a:hover {
+    color: #F59E0B; /* Tu color ámbar insignia */
+    background: rgba(255, 255, 255, 0.03); /* Un cajón muy tenue de fondo */
+    transform: translateY(-2px); /* Pequeño salto interactivo hacia arriba */
+}
+
+/* Control responsivo: En pantallas muy pequeñas de celular se acomoda en lista limpia */
+@media (max-width: 600px) {
+    .footer-bar {
+        grid-template-columns: 1fr; /* Una sola columna vertical */
+        gap: 15px;
+        margin: 80px auto 20px auto;
+        padding: 20px;
+    }
 }
