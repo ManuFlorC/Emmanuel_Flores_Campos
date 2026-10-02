@@ -608,7 +608,7 @@ body {
     position: absolute;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
     z-index: 5;
     transition: transform 0.3s ease;
 }
@@ -621,12 +621,12 @@ body {
 
 /* 🔵 EL CÍRCULO BASE CON EFECTO NEÓN (Azul para tus proyectos históricos) */
 .dot {
-    width: 12px;
-    height: 12px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background-color: #3B82F6; /* Tu azul brillante */
     /* 🌟 EFECTO NEÓN CHIDO: Crea un destello de luz suave alrededor del punto */
-    box-shadow: 0 0 10px #3B82F6, 0 0 20px rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 6px #3B82F6, 0 0 12px rgba(59, 130, 246, 0.5);
     display: block;
     position: relative;
 }
@@ -635,7 +635,7 @@ body {
 .gijon .dot,
 .mugardos .dot {
     background-color: #F59E0B; /* Tu color ámbar insignia */
-    box-shadow: 0 0 12px #F59E0B, 0 0 25px rgba(245, 158, 11, 0.7);
+    box-shadow: 0 0 8px #F59E0B, 0 0 16px rgba(245, 158, 11, 0.7);
     /* Animación infinita de pulso neón para resaltar donde estás parado hoy en día */
     animation: pulsoNeon 2s infinite ease-in-out;
 }
@@ -650,7 +650,7 @@ body {
 /* El texto o etiqueta con el nombre de la ciudad */
 .label {
     color: #CBD5E1;
-    font-size: 0.9rem;
+    font-size: 0.8rem !important; /* Bajado de 0.9rem a 0.8rem */
     font-weight: 400;
     /* Sombra de texto para asegurar que se lea perfecto sobre el fondo oscuro */
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9); 
@@ -660,38 +660,46 @@ body {
 /* ==========================================
    📌 COORDENADAS RESPONSIVAS (%)
    ========================================== */
-    /* MÉXICO */
-    .cdmx {
-        left: 20.5%;
-        top: 37%;
-    }
-    
-    .paraiso {
-        left: 24%;
-        top: 53%;
-    }
-    
-    .elsauz {
-        left: 23%;
-        top: 43%;
-    }
-    
-    /* ESPAÑA */
-    
-    .madrid {
-        left: 56%;
-        top: 40%;
-    }
-    
-    .gijon {
-        left: 54.5%;
-        top: 33.5%;
-    }
-    
-    .mugardos {
-        left: 53.7%;
-        top: 31%;
-    }
+   /* --- BLOQUE MÉXICO --- */
+
+/* Ubicado en el centro exacto del país */
+.elsauz {
+    left: 21.8% !important;
+    top: 40.5% !important;
+}
+
+/* Ubicada ligeramente al sur/centro, justo abajo de Querétaro */
+.cdmx {
+    left: 22.2% !important;
+    top: 42.5% !important;
+}
+
+/* Ubicado en el gancho o curva inferior del Golfo de México */
+.paraiso {
+    left: 24.2% !important;
+    top: 44.5% !important;
+}
+
+
+/* --- BLOQUE ESPAÑA --- */
+
+/* Justo al norte de la península, pegado al océano Cantábrico */
+.gijon {
+    left: 49.3% !important;
+    top: 31.0% !important;
+}
+
+/* Al extremo noroeste, al ladito izquierdo de Gijón */
+.mugardos {
+    left: 47.8% !important;
+    top: 31.5% !important;
+}
+
+/* Clavado en el centro del territorio español */
+.madrid {
+    left: 49.5% !important;
+    top: 33.5% !important;
+}
 
 /* ==========================================
    🌀 ANIMACIÓN: PULSO NEÓN
