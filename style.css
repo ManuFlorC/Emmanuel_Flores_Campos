@@ -658,48 +658,51 @@ body {
 }
 
 /* ==========================================
-   📌 COORDENADAS RESPONSIVAS (%)
+   🎯 CALIBRACIÓN FINAL PARA EL MAPA EN SECCIÓN (%)
    ========================================== */
-   /* --- BLOQUE MÉXICO --- */
 
-/* Ubicado en el centro exacto del país */
+/* --- BLOQUE MÉXICO (Centro y Golfo) --- */
+
+/* Ubicado en la zona céntrica del territorio mexicano */
 .elsauz {
-    left: 21.8% !important;
+    left: 21.0% !important;
+    top: 38.0% !important;
+}
+
+/* Ubicada ligeramente al sur/centro, pegadita abajo de Querétaro */
+.cdmx {
+    left: 21.5% !important;
     top: 40.5% !important;
 }
 
-/* Ubicada ligeramente al sur/centro, justo abajo de Querétaro */
-.cdmx {
-    left: 22.2% !important;
-    top: 42.5% !important;
-}
-
-/* Ubicado en el gancho o curva inferior del Golfo de México */
+/* Clavado en el gancho o curva inferior del Golfo de México */
 .paraiso {
-    left: 24.2% !important;
-    top: 44.5% !important;
+    left: 24.0% !important;
+    top: 43.5% !important;
 }
 
 
-/* --- BLOQUE ESPAÑA --- */
+/* --- BLOQUE ESPAÑA (Península Ibérica) --- */
 
-/* Justo al norte de la península, pegado al océano Cantábrico */
-.gijon {
-    left: 49.3% !important;
-    top: 31.0% !important;
-}
-
-/* Al extremo noroeste, al ladito izquierdo de Gijón */
+/* Al extremo noroeste de la península, justo al ladito de Gijón */
 .mugardos {
-    left: 47.8% !important;
-    top: 31.5% !important;
+    left: 47.0% !important;
+    top: 25.5% !important;
+    flex-direction: row-reverse !important;
 }
 
-/* Clavado en el centro del territorio español */
-.madrid {
-    left: 49.5% !important;
-    top: 33.5% !important;
+/* En la costa norte de España, pegado al mar Cantábrico */
+.gijon {
+    left: 48.5% !important;
+    top: 25.0% !important;
 }
+
+/* Clavado exactamente en el corazón de la península ibérica */
+.madrid {
+    left: 48.8% !important;
+    top: 28.0% !important;
+}
+
 
 /* ==========================================
    🌀 ANIMACIÓN: PULSO NEÓN
