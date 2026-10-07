@@ -669,14 +669,14 @@ body {
 
 /* Ubicado en la zona céntrica del territorio mexicano */
 .elsauz {
-    left: 18.30% !important;
+    left: 10.81% !important;
     top: 48.16% !important;
     flex-direction: row-reverse !important;
 }
 
 /* Ubicada ligeramente al sur/centro, pegadita abajo de Querétaro */
 .cdmx {
-    left: 18.32% !important;
+    left: 13.37% !important;
     top: 49.16% !important;
     flex-direction: row-reverse !important;
 }
@@ -692,21 +692,21 @@ body {
 
 /* Al extremo noroeste de la península, justo al ladito de Gijón */
 .mugardos {
-    left: 43.25% !important;
+    left: 37.7% !important;
     top: 39.58% !important;
     flex-direction: row-reverse !important;
 }
 
 /* En la costa norte de España, pegado al mar Cantábrico */
 .gijon {
-    left: 44.02% !important;
-    top: 38.3% !important;
+    left: 44.1% !important;
+    top: 36.3% !important;
 }
 
 /* Clavado exactamente en el corazón de la península ibérica */
 .madrid {
-    left: 44.12% !important;
-    top: 40.16% !important;
+    left: 44.82% !important;
+    top: 39.36% !important;
 }
 
 
