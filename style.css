@@ -561,50 +561,41 @@ body {
      }    
 }
 /* ==========================================
-   📌 SECCIÓN: ENGINEERING JOURNEY
+   📌 SECCIÓN: ENGINEERING JOURNEY (DESTRUCTIVA)
    ========================================== */
 
-/* Contenedor principal de toda la sección del mapa */
 #journey-map {
     max-width: 1600px;
     margin: auto;
-    padding: 0 40px 80px 40px;
+    padding: 80px 40px;
 }
 
-/* El título principal de tu trayectoria global */
 #journey-map h2 {
     text-align: center;
     font-size: 3rem;
-    color: #3B82F6; /* Tu azul característico */
-    margin-bottom: 25px;
+    color: #3B82F6;
+    margin-bottom: 40px;
 }
 
-/* 🗺️ CAJA MADRE DEL MAPA: Sistema de coordenadas de origen */
+/* 🗺️ CAJA MADRE INDESTRUCTIBLE: 
+   Obligamos a la caja a medir EXACTAMENTE lo mismo que mida la imagen en pantalla. 
+   Si la imagen se encoge, la caja se encoge; si la imagen crece, la caja crece. */
 .world-map {
     position: relative;
     width: 100%;
-    max-width: 1400px;
+    max-width: 1200px; /* Tamaño máximo controlado para que no se pixele */
     margin: auto;
-    aspect-ratio: 2 / 1;
-    overflow: hidden;
+    display: inline-block; /* Truco maestro: la caja adopta el tamaño exacto de la foto interna */
 }
 
-/* Estilo para la imagen del mapamundi */
 .map-image {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto; /* Permite que la proporción natural de la foto mande en el diseño */
     display: block;
-    opacity: 1; /* Filtro esmerilado opaco */
-
-    /* 🎨 Filtro que re-colorea la imagen original verde hacia el azul */
-    filter:
-        invert(42%)
-        sepia(93%)
-        saturate(1000%)
-        hue-rotate(203deg)
-        brightness(120%)
-        contrast(135%);
+    opacity: 0.25; /* Bajado para que haga un fondo elegante */
+    
+    /* Tu filtro azul que se ve mamalón */
+    filter: invert(42%) sepia(93%) saturate(1000%) hue-rotate(203deg) brightness(120%) contrast(135%);
 }
 
 /* Contenedor base de cada pin flotante */
@@ -612,101 +603,79 @@ body {
     position: absolute;
     display: flex;
     align-items: center;
-    gap: 5px;
     z-index: 5;
-    transition: transform 0.3s ease;
+    /* Quitamos el 'gap' y cualquier flex extraño que mueva el punto de su centro */
+    transform: translate(-50%, -50%); /* Centra el nodo exactamente en su coordenada */
 }
 
-/* Efecto hover general: el punto y su texto crecen un poco cuando pasas el mouse */
-.map-node:hover {
-    transform: scale(1.15);
-    z-index: 10; /* Se asegura de flotar por encima de otros nodos cercanos */
-}
-
-/* 🔵 EL CÍRCULO BASE CON EFECTO NEÓN (Azul para tus proyectos históricos) */
+/* El círculo base con efecto neón */
 .dot {
-    width: 6px;
-    height: 6px;
+    width: 8px !important;
+    height: 8px !important;
     border-radius: 50%;
-    background-color: #3B82F6; /* Tu azul brillante */
-    /* 🌟 EFECTO NEÓN CHIDO: Crea un destello de luz suave alrededor del punto */
-    box-shadow: 0 0 6px #3B82F6, 0 0 12px rgba(59, 130, 246, 0.5);
-    display: block;
-    position: relative;
+    background-color: #3B82F6;
+    box-shadow: 0 0 8px #3B82F6, 0 0 15px rgba(59, 130, 246, 0.5);
+    flex-shrink: 0; /* Evita que el navegador aplaste el círculo en pantallas chicas */
 }
 
-/* 🟠 EFECTO NARANJA/ÁMBAR PARA TU ACTUALIDAD Y ESPECIALIZACIÓN (Gijón y Mugardos) */
+/* El pulso neón ámbar para Gijón y Mugardos */
 .gijon .dot,
 .mugardos .dot {
-    background-color: #F59E0B; /* Tu color ámbar insignia */
-    box-shadow: 0 0 8px #F59E0B, 0 0 16px rgba(245, 158, 11, 0.7);
-    /* Animación infinita de pulso neón para resaltar donde estás parado hoy en día */
+    background-color: #F59E0B;
+    box-shadow: 0 0 10px #F59E0B, 0 0 20px rgba(245, 158, 11, 0.7);
     animation: pulsoNeon 2s infinite ease-in-out;
 }
 
-/* Cambia sutilmente el color del texto para tus hitos ámbar */
+/* Las etiquetas de texto: Ahora flotan de forma independiente mediante position absolute */
+.label {
+    position: absolute;
+    color: #CBD5E1;
+    font-size: 0.8rem !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); 
+    white-space: nowrap;
+}
+
 .gijon .label,
 .mugardos .label {
-    color: #F5F2EA; /* Tu blanco marfil premium */
+    color: #F5F2EA;
     font-weight: 500;
 }
 
-/* El texto o etiqueta con el nombre de la ciudad */
-.label {
-    color: #CBD5E1;
-    font-size: 0.8rem; /* Bajado de 0.9rem a 0.8rem */
-    /*font-weight: 400; -- Esto se elimina y se deja comentado.*/
-    /* Sombra de texto para asegurar que se lea perfecto sobre el fondo oscuro */
-    white-space: nowrap; /* Evita que el nombre se rompa feo en pantallas chicas */ 
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9); 
+/* ========================================================
+   🎯 CALIBRACIÓN GENERAL EN % (AMARRADOS A LA IMAGEN)
+   ======================================================== */
+.elsauz   { left: 15.2%; top: 46.2%; }
+.cdmx     { left: 15.6%; top: 48.0%; }
+.paraiso  { left: 18.0%; top: 49.5%; }
+
+.mugardos { left: 45.4%; top: 29.8%; }
+.gijon    { left: 47.0%; top: 29.0%; }
+.madrid   { left: 47.2%; top: 32.5%; }
+
+
+/* ========================================================
+   📌 ETIQUETAS DE TEXTO CONGELADAS (POSICIONES FIJAS POR NODO)
+   ======================================================== */
+
+/* Envia el texto a la izquierda del punto */
+.elsauz .label,
+.cdmx .label {
+    right: 14px; /* Lo avienta a la izquierda del punto */
+    text-align: right;
 }
 
-/* ==========================================
-   🎯 CALIBRACIÓN FINAL PARA EL MAPA EN SECCIÓN (%)
-   ========================================== */
-
-/* --- BLOQUE MÉXICO (Centro y Golfo) --- */
-
-/* Ubicado en la zona céntrica del territorio mexicano */
-.elsauz {
-    left: 10.81% !important;
-    top: 48.16% !important;
-    flex-direction: row-reverse !important;
+/* Envia el texto a la derecha del punto */
+.paraiso .label,
+.gijon .label,
+.madrid .label {
+    left: 14px; /* Lo avienta a la derecha del punto */
+    text-align: left;
 }
 
-/* Ubicada ligeramente al sur/centro, pegadita abajo de Querétaro */
-.cdmx {
-    left: 13.37% !important;
-    top: 49.16% !important;
-    flex-direction: row-reverse !important;
-}
-
-/* Clavado en el gancho o curva inferior del Golfo de México */
-.paraiso {
-    left: 20.37% !important;
-    top: 48.79% !important;
-}
-
-
-/* --- BLOQUE ESPAÑA (Península Ibérica) --- */
-
-/* Al extremo noroeste de la península, justo al ladito de Gijón */
-.mugardos {
-    left: 37.7% !important;
-    top: 39.58% !important;
-    flex-direction: row-reverse !important;
-}
-
-/* En la costa norte de España, pegado al mar Cantábrico */
-.gijon {
-    left: 44.1% !important;
-    top: 36.3% !important;
-}
-
-/* Clavado exactamente en el corazón de la península ibérica */
-.madrid {
-    left: 44.82% !important;
-    top: 39.36% !important;
+/* Mugardos (Galicia): Lo subimos un poco para que no estorbe con el de Gijón */
+.mugardos .label {
+    right: 14px;
+    bottom: 8px;
 }
 
 
@@ -714,50 +683,7 @@ body {
    🌀 ANIMACIÓN: PULSO NEÓN
    ========================================== */
 @keyframes pulsoNeon {
-    0% {
-        box-shadow: 0 0 10px #F59E0B, 0 0 15px rgba(245, 158, 11, 0.5);
-    }
-    50% {
-        /* En el punto medio de la animación, el destello brilla con el doble de intensidad */
-        box-shadow: 0 0 16px #F59E0B, 0 0 30px rgba(245, 158, 11, 0.9);
-    }
-    100% {
-        box-shadow: 0 0 10px #F59E0B, 0 0 15px rgba(245, 158, 11, 0.5);
-    }
-}
-/* ========================================================
-   📌 POSICIONAMIENTO DE LETREROS (TRANSLATE RESPONSIVO)
-   ======================================================== */
-
-/* MÉXICO */
-.elsauz .label {
-    /* Mueve el texto hacia la izquierda (-100% de su ancho) y un poco hacia arriba (-12px) */
-    transform: translate(-100%, -12px) !important;
-}
-
-.cdmx .label {
-    /* Mueve el texto a la izquierda y un poco hacia abajo para que no choque con El Sauz */
-    transform: translate(-100%, 8px) !important;
-}
-
-.paraiso .label {
-    /* Lo manda a la derecha del punto y centrado verticalmente */
-    transform: translate(5px, 0px) !important;
-}
-
-/* ESPAÑA */
-.gijon .label {
-    /* Lo manda a la derecha del punto y un poco arriba para que libre a Madrid */
-    transform: translate(5px, -12px) !important;
-}
-
-.mugardos .label {
-    /* Como usamos row-reverse, este texto va a la izquierda de forma natural. 
-       Solo lo subimos un pelo para que no estorbe */
-    transform: translate(0px, -12px) !important;
-}
-
-.madrid .label {
-    /* Lo manda a la derecha y un poco abajo en el centro de la península */
-    transform: translate(5px, 12px) !important;
+    0% { box-shadow: 0 0 10px #F59E0B, 0 0 15px rgba(245, 158, 11, 0.5); }
+    50% { box-shadow: 0 0 16px #F59E0B, 0 0 30px rgba(245, 158, 11, 0.9); }
+    100% { box-shadow: 0 0 10px #F59E0B, 0 0 15px rgba(245, 158, 11, 0.5); }
 }
