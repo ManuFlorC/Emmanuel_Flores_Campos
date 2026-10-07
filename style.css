@@ -88,16 +88,16 @@ body {
 /* ========================= */
 
 #timeline {
-    padding: 120px 40px;
     max-width: 1400px;
     margin: auto;
+    padding: 40px 40px 10px 40px;
 }
 
 #timeline h2 {
     text-align: center;
     font-size: 3rem;
     color: #3B82F6;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 }
 
 .timeline-container {
@@ -568,7 +568,7 @@ body {
 #journey-map {
     max-width: 1600px;
     margin: auto;
-    padding: 120px 40px;
+    padding: 0 40px 80px 40px;
 }
 
 /* El título principal de tu trayectoria global */
@@ -576,7 +576,7 @@ body {
     text-align: center;
     font-size: 3rem;
     color: #3B82F6; /* Tu azul característico */
-    margin-bottom: 80px;
+    margin-bottom: 25px;
 }
 
 /* 🗺️ CAJA MADRE DEL MAPA: Sistema de coordenadas de origen */
@@ -585,11 +585,15 @@ body {
     width: 100%;
     max-width: 1400px;
     margin: auto;
+    aspect-ratio: 2 / 1;
+    overflow: hidden;
 }
 
 /* Estilo para la imagen del mapamundi */
 .map-image {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
     opacity: 1; /* Filtro esmerilado opaco */
 
@@ -650,11 +654,11 @@ body {
 /* El texto o etiqueta con el nombre de la ciudad */
 .label {
     color: #CBD5E1;
-    font-size: 0.8rem !important; /* Bajado de 0.9rem a 0.8rem */
-    font-weight: 400;
+    font-size: 0.8rem; /* Bajado de 0.9rem a 0.8rem */
+    /*font-weight: 400; -- Esto se elimina y se deja comentado.*/
     /* Sombra de texto para asegurar que se lea perfecto sobre el fondo oscuro */
+    white-space: nowrap; /* Evita que el nombre se rompa feo en pantallas chicas */ 
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9); 
-    white-space: nowrap; /* Evita que el nombre se rompa feo en pantallas chicas */
 }
 
 /* ==========================================
@@ -721,4 +725,33 @@ body {
         box-shadow: 0 0 10px #F59E0B, 0 0 15px rgba(245, 158, 11, 0.5);
     }
 }
+/*Agregado el 07/10/26*/
+/* MÉXICO */
+.cdmx .label {
+    left: 12px;
+    top: -8px;
+}
+.elsauz .label {
+    left: 12px;
+    top: -25px;
+}
+.paraiso .label {
+    left: 12px;
+    top: 12px;
+}
 
+/* ESPAÑA */
+.madrid .label {
+    left: 12px;
+    top: 10px;
+}
+
+.gijon .label {
+    left: 12px;
+    top: -12px;
+}
+
+.mugardos .label {
+    left: -65px;
+    top: -8px;
+}
