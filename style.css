@@ -592,7 +592,7 @@ body {
     width: 100%;
     height: auto; /* Permite que la proporción natural de la foto mande en el diseño */
     display: block;
-    opacity: 0.25; /* Bajado para que haga un fondo elegante */
+    opacity: 1; /* Bajado para que haga un fondo elegante */
     
     /* Tu filtro azul que se ve mamalón */
     filter: invert(42%) sepia(93%) saturate(1000%) hue-rotate(203deg) brightness(120%) contrast(135%);
@@ -644,13 +644,13 @@ body {
 /* ========================================================
    🎯 CALIBRACIÓN GENERAL EN % (AMARRADOS A LA IMAGEN)
    ======================================================== */
-.elsauz   { left: 17.67%; top: 45.89%; }
-.cdmx     { left: 17.7%; top: 46.50%; }
-.paraiso  { left: 20.20%; top: 49.5%; }
+.elsauz   { left: 17.67%; top: 47.77%; }
+.cdmx     { left: 17.7%; top: 47.57%; }
+.paraiso  { left: 20.20%; top: 49.72%; }
 
 .mugardos { left: 43.64%; top: 40.60%; }
 .gijon    { left: 44.32%; top: 40.22%; }
-.madrid   { left: 44.39%; top: 32.5%; }
+.madrid   { left: 44.39%; top: 41.97%; }
 
 
 /* ========================================================
