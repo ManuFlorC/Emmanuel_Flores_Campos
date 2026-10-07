@@ -725,33 +725,39 @@ body {
         box-shadow: 0 0 10px #F59E0B, 0 0 15px rgba(245, 158, 11, 0.5);
     }
 }
-/*Agregado el 07/10/26*/
+/* ========================================================
+   📌 POSICIONAMIENTO DE LETREROS (TRANSLATE RESPONSIVO)
+   ======================================================== */
+
 /* MÉXICO */
-.cdmx .label {
-    left: 12px;
-    top: -8px;
-}
 .elsauz .label {
-    left: 12px;
-    top: -25px;
+    /* Mueve el texto hacia la izquierda (-100% de su ancho) y un poco hacia arriba (-12px) */
+    transform: translate(-100%, -12px) !important;
 }
+
+.cdmx .label {
+    /* Mueve el texto a la izquierda y un poco hacia abajo para que no choque con El Sauz */
+    transform: translate(-100%, 8px) !important;
+}
+
 .paraiso .label {
-    left: 12px;
-    top: 12px;
+    /* Lo manda a la derecha del punto y centrado verticalmente */
+    transform: translate(5px, 0px) !important;
 }
 
 /* ESPAÑA */
-.madrid .label {
-    left: 12px;
-    top: 10px;
-}
-
 .gijon .label {
-    left: 12px;
-    top: -12px;
+    /* Lo manda a la derecha del punto y un poco arriba para que libre a Madrid */
+    transform: translate(5px, -12px) !important;
 }
 
 .mugardos .label {
-    left: -65px;
-    top: -8px;
+    /* Como usamos row-reverse, este texto va a la izquierda de forma natural. 
+       Solo lo subimos un pelo para que no estorbe */
+    transform: translate(0px, -12px) !important;
+}
+
+.madrid .label {
+    /* Lo manda a la derecha y un poco abajo en el centro de la península */
+    transform: translate(5px, 12px) !important;
 }
