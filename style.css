@@ -665,22 +665,22 @@ body {
 
 /* Ubicado en la zona céntrica del territorio mexicano */
 .elsauz {
-    left: 18.10% !important;
-    top: 52.0% !important;
+    left: 18.61% !important;
+    top: 48.36% !important;
     flex-direction: row-reverse !important;
 }
 
 /* Ubicada ligeramente al sur/centro, pegadita abajo de Querétaro */
 .cdmx {
-    left: 18.1% !important;
-    top: 54.5% !important;
+    left: 189.21% !important;
+    top: 50.58% !important;
     flex-direction: row-reverse !important;
 }
 
 /* Clavado en el gancho o curva inferior del Golfo de México */
 .paraiso {
-    left: 19.10% !important;
-    top: 55.0% !important;
+    left: 20.57% !important;
+    top: 49.59% !important;
 }
 
 
@@ -688,21 +688,21 @@ body {
 
 /* Al extremo noroeste de la península, justo al ladito de Gijón */
 .mugardos {
-    left: 39.0% !important;
-    top: 40.0% !important;
+    left: 43.21% !important;
+    top: 39.58% !important;
     flex-direction: row-reverse !important;
 }
 
 /* En la costa norte de España, pegado al mar Cantábrico */
 .gijon {
-    left: 41.0% !important;
-    top: 40.0% !important;
+    left: 44.12% !important;
+    top: 39.5% !important;
 }
 
 /* Clavado exactamente en el corazón de la península ibérica */
 .madrid {
-    left: 40.1% !important;
-    top: 42.2% !important;
+    left: 44.36% !important;
+    top: 41.81% !important;
 }
 
 
