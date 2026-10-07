@@ -665,14 +665,14 @@ body {
 
 /* Ubicado en la zona céntrica del territorio mexicano */
 .elsauz {
-    left: 18.61% !important;
+    left: 8.81% !important;
     top: 48.36% !important;
     flex-direction: row-reverse !important;
 }
 
 /* Ubicada ligeramente al sur/centro, pegadita abajo de Querétaro */
 .cdmx {
-    left: 189.21% !important;
+    left: 11.37% !important;
     top: 50.58% !important;
     flex-direction: row-reverse !important;
 }
@@ -688,7 +688,7 @@ body {
 
 /* Al extremo noroeste de la península, justo al ladito de Gijón */
 .mugardos {
-    left: 43.21% !important;
+    left: 37.70% !important;
     top: 39.58% !important;
     flex-direction: row-reverse !important;
 }
