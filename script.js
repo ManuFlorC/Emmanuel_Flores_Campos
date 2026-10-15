@@ -125,3 +125,51 @@ timelinePoints.forEach(point => {
         }
     });
 });
+
+// ========================================================
+// 📌 MOTOR DE INTERACTIVIDAD: TIMELINE VS MAPAMUNDI (JS)
+// ========================================================
+
+// 1. CAPTURA: Buscamos todos los botones o nodos de tu línea de tiempo en el HTML
+const timelinePoints = document.querySelectorAll(".timeline-point");
+
+// 2. DICCIONARIO: Relación directa de qué ciudades se deben encender en cada hito laboral
+const mapStages = {
+    tbx: ["cdmx"],                         // Etapa Turbo-Mex -> Enciende CDMX
+    ica: ["cdmx", "paraiso"],              // Etapa ICA Fluor -> Enciende CDMX y Tabasco
+    intecsa: ["madrid"],                   // Etapa Intecsa -> Viaja a Madrid
+    tsk: ["elsauz", "gijon", "mugardos"],  // Etapa TSK -> Enciende Querétaro, Asturias y Galicia en conjunto
+    future: []                             // Visión de futuro -> Sin locaciones físicas por el momento
+};
+
+// 3. ESCUCHADOR: Recorremos cada punto del Journey esperando el clic del usuario
+timelinePoints.forEach(point => {
+    point.addEventListener("click", () => {
+
+        // A. LIMPIEZA TOTAL: Apagamos todos los destellos neón del mapa quitándoles la clase 'active'
+        document.querySelectorAll(".map-node").forEach(node => {
+            node.classList.remove("active");
+        });
+
+        // B. EXTRACCIÓN: Leemos el atributo 'data-stage' del botón presionado (ej: tbx, ica, tsk...)
+        const stage = point.dataset.stage;
+
+        // C. BLINDAJE DE SEGURIDAD (CORRECCIÓN CRUCIAL):
+        // Validamos que la etapa exista en nuestro diccionario Y que tenga ciudades asignadas (longitud > 0).
+        // Esto evita que el código falle o tire error en la consola cuando den clic en 'future'.
+        if (mapStages[stage] && mapStages[stage].length > 0) {
+
+            // D. ILUMINACIÓN: Recorremos las ciudades registradas en esta etapa
+            mapStages[stage].forEach(location => {
+                
+                // Buscamos el nodo del mapa que tenga esa clase específica (ej: .gijon)
+                const node = document.querySelector("." + location);
+
+                // Si el navegador encuentra la ciudad en el mapa, le inyecta la clase activa de CSS
+                if (node) {
+                    node.classList.add("active");
+                }
+            });
+        }
+    });
+});
