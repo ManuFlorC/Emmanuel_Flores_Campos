@@ -687,3 +687,39 @@ body {
     50% { box-shadow: 0 0 16px #F59E0B, 0 0 30px rgba(245, 158, 11, 0.9); }
     100% { box-shadow: 0 0 10px #F59E0B, 0 0 15px rgba(245, 158, 11, 0.5); }
 }
+
+/* ========================================================
+   📌 ESTADOS INTERACTIVOS DEL MAPA (LINK CON JS)
+   ======================================================== */
+
+/* Estado base: Al cargar la página, todos los nodos del mapa se atenúan 
+   para esperar a que el usuario interactúe con la línea de tiempo. */
+.map-node {
+    opacity: 0.25; /* Mantiene los puntos sutiles en el fondo */
+    transition: 
+        opacity 0.4s ease, 
+        transform 0.4s ease; /* Transición fluida y rápida de 0.4 segundos */
+}
+
+/* Estado Activo: Se activa automáticamente mediante JavaScript 
+   cuando el usuario hace clic en un hito de la línea de tiempo. */
+.map-node.active {
+    opacity: 1 !important; /* Fuerza al punto seleccionado a brillar al 100% de opacidad */
+    transform: scale(1.15) !important; /* Agranda el nodo sutilmente para denotar enfoque visual */
+    z-index: 10; /* Eleva el punto activo para que flote por encima de cualquier texto cercano */
+}
+
+/* Potenciación del destello neón para el punto que se encuentra activo */
+.map-node.active .dot {
+    /* El truco de 'currentColor' hereda de forma inteligente el color exacto del punto 
+       (azul para tus proyectos pasados o naranja/ámbar para Asturias y Galicia) */
+    box-shadow:
+        0 0 15px currentColor,
+        0 0 30px currentColor; /* Crea una atmósfera neón imponente alrededor del círculo */
+}
+
+/* Resalte tipográfico para el nombre de la ciudad activa */
+.map-node.active .label {
+    color: #FFFFFF; /* Cambia el gris claro por un blanco puro brillante para mejorar la lectura */
+    font-weight: 500; /* Le da un poco más de cuerpo a la tipografía del hito seleccionado */
+}
