@@ -558,7 +558,10 @@ body {
     .dot { 
         width: 10px; 
         height: 10px;
-     }    
+     }
+    .journey-layout {
+    grid-template-columns: 1fr;
+    }
 }
 /* ==========================================
    📌 SECCIÓN: ENGINEERING JOURNEY (DESTRUCTIVA)
@@ -722,4 +725,55 @@ body {
 .map-node.active .label {
     color: #FFFFFF; /* Cambia el gris claro por un blanco puro brillante para mejorar la lectura */
     font-weight: 500; /* Le da un poco más de cuerpo a la tipografía del hito seleccionado */
+}
+/* ==========================================
+   JOURNEY LAYOUT
+   ========================================== */
+
+.journey-layout {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    gap: 25px;
+    align-items: start;
+}
+/* MAPA */
+.journey-map-panel {
+    width: 100%;
+}
+/* EXPERIENCIA */
+.experience-panel {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 25px;
+    min-height: 600px;
+}
+
+/* CONTENIDO INTERNO */
+#experience-content {
+    color: #CBD5E1;
+}
+
+#experience-content h3 {
+    color: #3B82F6;
+    margin-bottom: 12px;
+}
+#experience-content h4 {
+    color: #F59E0B;
+    margin-bottom: 20px;
+}
+
+#experience-content ul {
+    padding-left: 20px;
+}
+
+#experience-content li {
+    margin-bottom: 8px;
+}
+
+#experience-content blockquote {
+    margin-top: 25px;
+    padding-left: 15px;
+    border-left: 3px solid #3B82F6;
+    color: #94A3B8;
 }
